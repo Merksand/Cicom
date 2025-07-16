@@ -95,11 +95,6 @@ const eventos: Evento[] = [
 
 const Eventos: React.FC = () => {
   const [filtro, setFiltro] = useState<"todos" | "evento" | "noticia">("todos");
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   const eventosFiltrados = eventos.filter(evento => 
     filtro === "todos" ? true : evento.tipo === filtro
