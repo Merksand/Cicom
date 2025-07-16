@@ -4,7 +4,7 @@ const Contacto: React.FC = () => (
   <section id="contacto" className="py-12 bg-white dark:bg-[#1e293b] flex flex-col items-center">
     <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#1e40af] dark:text-[#60a5fa]">Contacto</h2>
     <div className="flex flex-col md:flex-row gap-8 max-w-4xl w-full px-4">
-      {/* Formulario */}
+
       <form className="flex-1 bg-[#f3f4f6] dark:bg-[#1e293b] rounded-xl shadow-xl p-8 flex flex-col gap-6 border border-[#e5e7eb] dark:border-[#334155]" onSubmit={e => e.preventDefault()}>
         <label className="font-semibold text-[#1e293b] dark:text-[#f3f4f6] flex flex-col gap-1">
           Nombre
@@ -40,7 +40,7 @@ const Contacto: React.FC = () => (
           Enviar
         </button>
       </form>
-      {/* Datos de contacto y mapa */}
+      {/* Mapa*/}
       <div className="flex-1 flex flex-col gap-4">
         <div className="bg-[#f3f4f6] dark:bg-[#1e293b] rounded-lg p-4 shadow">
           <h3 className="text-lg font-semibold mb-2 text-[#1e40af] dark:text-[#60a5fa]">Datos de contacto</h3>

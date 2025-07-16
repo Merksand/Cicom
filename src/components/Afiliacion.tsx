@@ -1,8 +1,20 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Afiliacion: React.FC = () => (
-  <section id="afiliacion" className="py-12 bg-white dark:bg-[#1e293b] flex flex-col items-center">
-    <div className="bg-[#f3f4f6] dark:bg-[#334155] rounded-xl shadow-lg p-8 max-w-4xl w-full flex flex-col items-center border border-[#f3f4f6] dark:border-[#475569]">
+  <motion.section id="afiliacion" className="py-12 bg-white dark:bg-[#1e293b] flex flex-col items-center"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.2 }}
+  >
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="bg-[#f3f4f6] dark:bg-[#334155] rounded-xl shadow-lg p-8 max-w-4xl w-full flex flex-col items-center border border-[#f3f4f6] dark:border-[#475569]"
+    >
       <div className="mb-4">
         <svg className="h-10 w-10 text-[#1e40af] dark:text-[#60a5fa]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" /></svg>
       </div>
@@ -48,50 +60,50 @@ const Afiliacion: React.FC = () => (
           Descargar Formulario
         </button>
       </div>
-    </div>
+    </motion.div>
     
-    {/* Imágenes de actividades de afiliación */}
+    {/* Img de afiliaciones*/}
     <div className="mt-12 max-w-6xl w-full px-4">
       <h3 className="text-xl font-semibold mb-6 text-[#1e40af] dark:text-[#60a5fa] text-center">Actividades de Afiliación</h3>
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="bg-[#f3f4f6] dark:bg-[#334155] rounded-lg overflow-hidden shadow-lg border border-[#f3f4f6] dark:border-[#475569]">
-          <img
-            src="/img/eventos/Cicom-3.jpg"
-            alt="Capacitación para afiliados"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h4 className="font-semibold text-[#1e293b] dark:text-[#f3f4f6] mb-2">Capacitaciones</h4>
-            <p className="text-sm text-[#1e293b] dark:text-[#f3f4f6]">Programas de formación continua para nuestros afiliados.</p>
-          </div>
-        </div>
-        
-        <div className="bg-[#f3f4f6] dark:bg-[#334155] rounded-lg overflow-hidden shadow-lg border border-[#f3f4f6] dark:border-[#475569]">
-          <img
-            src="/img/eventos/Cicom-8.jpg"
-            alt="Eventos de networking"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h4 className="font-semibold text-[#1e293b] dark:text-[#f3f4f6] mb-2">Networking</h4>
-            <p className="text-sm text-[#1e293b] dark:text-[#f3f4f6]">Eventos para conectar con otros profesionales del sector.</p>
-          </div>
-        </div>
-        
-        <div className="bg-[#f3f4f6] dark:bg-[#334155] rounded-lg overflow-hidden shadow-lg border border-[#f3f4f6] dark:border-[#475569]">
-          <img
-            src="/img/eventos/Cicom-9.jpg"
-            alt="Asambleas de afiliados"
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h4 className="font-semibold text-[#1e293b] dark:text-[#f3f4f6] mb-2">Asambleas</h4>
-            <p className="text-sm text-[#1e293b] dark:text-[#f3f4f6]">Participación en las decisiones institucionales.</p>
-          </div>
-        </div>
+        {[{
+          src: "/img/eventos/Cicom-3.jpg",
+          alt: "Capacitación para afiliados",
+          titulo: "Capacitaciones",
+          desc: "Programas de formación continua para nuestros afiliados."
+        }, {
+          src: "/img/eventos/Cicom-8.jpg",
+          alt: "Eventos de networking",
+          titulo: "Networking",
+          desc: "Eventos para conectar con otros profesionales del sector."
+        }, {
+          src: "/img/eventos/Cicom-9.jpg",
+          alt: "Asambleas de afiliados",
+          titulo: "Asambleas",
+          desc: "Participación en las decisiones institucionales."
+        }].map((item, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 + idx * 0.1, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="bg-[#f3f4f6] dark:bg-[#334155] rounded-lg overflow-hidden shadow-lg border border-[#f3f4f6] dark:border-[#475569]"
+          >
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h4 className="font-semibold text-[#1e293b] dark:text-[#f3f4f6] mb-2">{item.titulo}</h4>
+              <p className="text-sm text-[#1e293b] dark:text-[#f3f4f6]">{item.desc}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default Afiliacion; 

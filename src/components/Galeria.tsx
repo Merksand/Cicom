@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const imagenesGaleria = [
   { src: "/img/galeria/Cicom-4.jpg", alt: "Actividades profesionales" },
@@ -22,7 +23,6 @@ const Galeria: React.FC = () => {
   const [imagenSeleccionada, setImagenSeleccionada] = useState<string | null>(null);
   const [imagenesCargadas, setImagenesCargadas] = useState<Set<number>>(new Set());
 
-  // Precargar imágenes
   useEffect(() => {
     imagenesGaleria.forEach((imagen, index) => {
       const img = new Image();
@@ -36,7 +36,7 @@ const Galeria: React.FC = () => {
     });
   }, []);
 
-  // Bloquear scroll cuando el modal está abierto
+  // Bloqueando scrolll
   useEffect(() => {
     if (imagenSeleccionada) {
       const originalOverflow = document.body.style.overflow;
@@ -48,16 +48,37 @@ const Galeria: React.FC = () => {
   }, [imagenSeleccionada]);
 
   return (
-    <section id="galeria" className="py-12 bg-white dark:bg-[#1e293b] flex flex-col items-center">
-      <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#1e40af] dark:text-[#60a5fa]">Galería de Imágenes</h2>
-      <p className="text-center text-[#1e293b] dark:text-[#f3f4f6] mb-8 max-w-2xl px-4">
+    <motion.section id="galeria" className="py-12 bg-white dark:bg-[#1e293b] flex flex-col items-center"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        className="text-2xl md:text-3xl font-bold mb-4 text-[#1e40af] dark:text-[#60a5fa]"
+      >Galería de Imágenes</motion.h2>
+      <motion.p
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        className="text-center text-[#1e293b] dark:text-[#f3f4f6] mb-8 max-w-2xl px-4"
+      >
         Descubre los momentos más importantes de nuestra institución a través de nuestra galería de imágenes.
-      </p>
+      </motion.p>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-7xl w-full px-4">
         {imagenesGaleria.map((imagen, index) => (
-          <div 
-            key={index} 
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
             className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg bg-white  border border-[#f3f4f6] dark:border-[#1e293b]"
             onClick={() => setImagenSeleccionada(imagen.src)}
           >
@@ -77,11 +98,11 @@ const Galeria: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
               </svg>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
-      {/* Modal para imagen ampliada */}
+
       {imagenSeleccionada && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
@@ -104,7 +125,7 @@ const Galeria: React.FC = () => {
           </div>
         </div>
       )}
-    </section>
+    </motion.section>
   );
 };
 

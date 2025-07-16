@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 interface Evento {
   id: number;
@@ -105,14 +106,27 @@ const Eventos: React.FC = () => {
   );
 
   return (
-    <section id="eventos" className="py-12 bg-white dark:bg-[#1e293b] flex flex-col items-center">
-      <h2 className={`text-2xl md:text-3xl font-bold mb-4 text-[#1e40af] dark:text-[#60a5fa] transition-all duration-1000 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-      }`}>Eventos y Noticias</h2>
+    <motion.section id="eventos" className="py-12 bg-white dark:bg-[#1e293b] flex flex-col items-center"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        className="text-2xl md:text-3xl font-bold mb-4 text-[#1e40af] dark:text-[#60a5fa]"
+      >Eventos y Noticias</motion.h2>
       
-      <div className={`flex gap-2 mb-6 transition-all duration-700 delay-200 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-      }`}>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        className="flex gap-2 mb-6"
+      >
         <button
           onClick={() => setFiltro("todos")}
           className={`px-4 py-2 rounded transition-all duration-300 hover:scale-105 ${
@@ -143,46 +157,26 @@ const Eventos: React.FC = () => {
         >
           Noticias
         </button>
-      </div>
+      </motion.div>
 
-      <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full px-4 transition-all duration-1000 delay-400 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-      }`}>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full px-4">
         {eventosFiltrados.map((evento, index) => (
-          <div 
-            key={evento.id} 
-            className={`bg-[#f3f4f6] dark:bg-[#334155] rounded-lg shadow-lg overflow-hidden border border-[#f3f4f6] dark:border-[#475569] transition-all duration-700 delay-${index * 100} hover:shadow-xl hover:scale-105 hover:-translate-y-1 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-            }`}
+          <motion.div
+            key={evento.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="bg-[#f3f4f6] dark:bg-[#334155] rounded-lg p-6 shadow-lg border border-[#f3f4f6] dark:border-[#475569]"
           >
-            <div className="relative overflow-hidden">
-              <img
-                src={evento.imagen}
-                alt={evento.titulo}
-                className="w-full h-48 object-cover transition-transform duration-500 hover:scale-110"
-              />
-              <div className="absolute inset-0  bg-opacity-0 hover:bg-opacity-20 transition-all duration-300" />
-            </div>
-            <div className="p-4">
-              <div className="flex items-center justify-between mb-2">
-                <span className={`text-xs px-2 py-1 rounded transition-all duration-300 hover:scale-105 ${
-                  evento.tipo === "evento" 
-                    ? "bg-[#1e40af] dark:bg-[#60a5fa] text-white dark:text-[#1e40af]" 
-                    : "bg-[#0e7490] dark:bg-[#67e8f9] text-white dark:text-[#0e7490]"
-                }`}>
-                  {evento.tipo === "evento" ? "Evento" : "Noticia"}
-                </span>
-                <span className="text-xs text-[#1e293b] dark:text-[#f3f4f6]">{new Date(evento.fecha).toLocaleDateString()}</span>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-[#1e293b] dark:text-[#f3f4f6] hover:text-[#1e40af] dark:hover:text-[#60a5fa] transition-colors duration-300">
-                {evento.titulo}
-              </h3>
-              <p className="text-sm text-[#1e293b] dark:text-[#f3f4f6]">{evento.descripcion}</p>
-            </div>
-          </div>
+            <img src={evento.imagen} alt={evento.titulo} className="w-full h-40 object-cover rounded mb-4" />
+            <h3 className="text-lg font-semibold mb-1 text-[#1e293b] dark:text-[#f3f4f6]">{evento.titulo}</h3>
+            <p className="text-[#1e40af] dark:text-[#60a5fa] font-medium mb-2">{evento.fecha}</p>
+            <p className="text-sm text-[#1e293b] dark:text-[#f3f4f6]">{evento.descripcion}</p>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

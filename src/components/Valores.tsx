@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 
 const valores = [
   {
@@ -58,40 +59,39 @@ const valores = [
 ];
 
 const Valores: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <section id="valores" className="py-12 bg-white dark:bg-[#1e293b] flex flex-col items-center">
-      <h2 className={`text-2xl md:text-3xl font-bold mb-4 text-[#1e40af] dark:text-[#60a5fa] transition-all duration-1000 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-      }`}>Nuestros Valores</h2>
+    <motion.section id="valores" className="py-12 bg-white dark:bg-[#1e293b] flex flex-col items-center"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        className="text-2xl md:text-3xl font-bold mb-4 text-[#1e40af] dark:text-[#60a5fa]"
+      >Nuestros Valores</motion.h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full px-4">
         {valores.map((valor, index) => (
-          <div 
-            key={index} 
-            className={`bg-[#f3f4f6] dark:bg-[#334155] rounded-lg p-6 shadow-lg border border-[#f3f4f6] dark:border-[#475569] transition-all duration-700 delay-${index * 100} hover:shadow-xl hover:scale-105 hover:rotate-1 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-            }`}
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="bg-[#f3f4f6] dark:bg-[#334155] rounded-lg p-6 shadow-lg border border-[#f3f4f6] dark:border-[#475569] hover:shadow-xl hover:scale-105 hover:rotate-1"
           >
-            <div className={`text-[#1e40af] dark:text-[#60a5fa] mb-4 transition-all duration-500 hover:scale-110 hover:rotate-12 ${
-              isVisible ? 'scale-100' : 'scale-0'
-            }`}>
+            <div className="text-[#1e40af] dark:text-[#60a5fa] mb-4">
               {valor.icono}
             </div>
-            <h3 className={`text-lg font-semibold mb-2 text-[#1e293b] dark:text-[#f3f4f6] transition-all duration-500 delay-200 ${
-              isVisible ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
-            }`}>{valor.titulo}</h3>
-            <p className={`text-sm text-[#1e293b] dark:text-[#f3f4f6] transition-all duration-500 delay-300 ${
-              isVisible ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
-            }`}>{valor.descripcion}</p>
-          </div>
+            <h3 className="text-lg font-semibold mb-2 text-[#1e293b] dark:text-[#f3f4f6]">{valor.titulo}</h3>
+            <p className="text-sm text-[#1e293b] dark:text-[#f3f4f6]">{valor.descripcion}</p>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

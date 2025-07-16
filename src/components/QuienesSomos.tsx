@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import ReactDOM from "react-dom";
+import { motion } from "framer-motion";
 
 const imagenes = [
   { src: "/img/quienes-somos/Cicom-1.jpg", alt: "Fundación del colegio" },
@@ -17,7 +18,6 @@ const QuienesSomos: React.FC = () => {
     setIsVisible(true);
   }, []);
 
-  // Cerrar modal con Escape
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") setModal(null);
   }, []);
@@ -32,7 +32,6 @@ const QuienesSomos: React.FC = () => {
     }
   }, [modal, handleKeyDown]);
 
-  // Modal usando portal
   const modalPortal = modal ? ReactDOM.createPortal(
     <div 
       className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
@@ -60,10 +59,19 @@ const QuienesSomos: React.FC = () => {
 
   return (
     <>
-      <section id="quienes-somos" className="py-12 flex flex-col items-center">
-        <div className={`bg-white dark:bg-[#1e293b] rounded-xl shadow-lg p-8 max-w-4xl w-full flex flex-col items-center border border-[#f3f4f6] dark:border-[#1e293b] transition-all duration-1000 ${
-          isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
-        }`}>
+      <motion.section id="quienes-somos" className="py-12 flex flex-col items-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div
+          className={`bg-white dark:bg-[#1e293b] rounded-xl shadow-lg p-8 max-w-4xl w-full flex flex-col items-center border border-[#f3f4f6] dark:border-[#1e293b] transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'}`}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className={`mb-4 transition-all duration-700 delay-200 ${
             isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'
           }`}>
@@ -105,22 +113,28 @@ const QuienesSomos: React.FC = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
         
-        {/* Galería de imágenes de la institución con animaciones */}
-        <div className={`mt-12 max-w-6xl w-full px-4 transition-all duration-1000 delay-800 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-        }`}>
+        {/* Galería de imágenes */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="w-full"
+        >
           <h3 className="text-xl font-semibold mb-6 text-[#1e40af] dark:text-[#60a5fa] text-center">
             Nuestra Historia
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {imagenes.map((imagen, index) => (
-              <div
+              <motion.div
                 key={index}
-                className={`group relative overflow-hidden rounded-lg shadow-lg transition-all duration-700 delay-${(index + 1) * 200} hover:shadow-xl hover:scale-105 ${
-                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-                }`}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.2 }}
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl hover:scale-105 cursor-pointer"
                 onClick={() => setModal(imagen)}
                 style={{ cursor: 'pointer' }}
               >
@@ -134,11 +148,11 @@ const QuienesSomos: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                   </svg>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
       {modalPortal}
     </>
   );
