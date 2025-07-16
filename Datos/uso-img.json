@@ -1,0 +1,150 @@
+{
+    "banner": [
+        {
+            "src": "/img/banner/banner-principal.jpg",
+            "alt": "Banner principal del Colegio de Ingenieros Comerciales de Santa Cruz"
+        }
+    ],
+    "quienes-somos": [
+        {
+            "src": "/img/quienes-somos/Cicom-1.jpg",
+            "alt": "Miembros del colegio frente al edificio institucional"
+        },
+        {
+            "src": "/img/quienes-somos/Cicom-10.jpg",
+            "alt": "Grupo de ingenieras del colegio"
+        },
+        {
+            "src": "/img/quienes-somos/Cicom-11.jpg",
+            "alt": "Directiva del colegio junto a banner institucional"
+        },
+        {
+            "src": "/img/quienes-somos/Cicom-23.jpg",
+            "alt": "Miembros del colegio en evento académico"
+        },
+        {
+            "src": "/img/quienes-somos/Cicom-32.jpg",
+            "alt": "Ponente en escenario con banderas institucionales"
+        }
+    ],
+    "eventos": [
+        {
+            "src": "/img/eventos/Cicom-3.jpg",
+            "alt": "Reunión institucional en salón cerrado"
+        },
+        {
+            "src": "/img/eventos/Cicom-8.jpg",
+            "alt": "Presentación oficial en escenario con pantalla"
+        },
+        {
+            "src": "/img/eventos/Cicom-9.jpg",
+            "alt": "Participación del colegio en ceremonia"
+        },
+        {
+            "src": "/img/eventos/Cicom-16.jpg",
+            "alt": "Entrega de reconocimiento con bandera de fondo"
+        },
+        {
+            "src": "/img/eventos/Cicom-18.jpg",
+            "alt": "Presentación de libro en Feria Internacional del Libro"
+        },
+        {
+            "src": "/img/eventos/Cicom-20.jpg",
+            "alt": "Vista posterior de presentación en feria"
+        },
+        {
+            "src": "/img/eventos/Cicom-21.jpg",
+            "alt": "Acto con entrega en ambiente institucional"
+        },
+        {
+            "src": "/img/eventos/Cicom-24.jpg",
+            "alt": "Evento literario con panel de expositores"
+        },
+        {
+            "src": "/img/eventos/Cicom-27.jpg",
+            "alt": "Reconocimiento entregado durante evento con UCEBOL"
+        },
+        {
+            "src": "/img/eventos/Cicom-28.jpg",
+            "alt": "Stand del colegio en feria editorial"
+        }
+    ],
+    "galeria": [
+        {
+            "src": "/img/galeria/Cicom-4.jpg",
+            "alt": "Grupo informal en exteriores"
+        },
+        {
+            "src": "/img/galeria/Cicom-7.jpg",
+            "alt": "Selfie grupal con miembros del colegio"
+        },
+        {
+            "src": "/img/galeria/Cicom-12.jpg",
+            "alt": "Foto junto al número 33 decorativo de aniversario"
+        },
+        {
+            "src": "/img/galeria/Cicom-14.jpg",
+            "alt": "Evento aniversario con decoración azul"
+        },
+        {
+            "src": "/img/galeria/Cicom-15.jpg",
+            "alt": "Miembro del colegio posando en decoración 33 años"
+        },
+        {
+            "src": "/img/galeria/Cicom-19.jpg",
+            "alt": "Miembros mostrando libros publicados"
+        },
+        {
+            "src": "/img/galeria/Cicom-25.jpg",
+            "alt": "Cena de gala con miembros del colegio"
+        },
+        {
+            "src": "/img/galeria/Cicom-26.jpg",
+            "alt": "Foto grupal formal en evento institucional"
+        },
+        {
+            "src": "/img/galeria/Cicom-29.jpg",
+            "alt": "Miembros en stand de universidad UCEBOL"
+        },
+        {
+            "src": "/img/galeria/Cicom-30.jpg",
+            "alt": "Participación en evento 35 aniversario"
+        },
+        {
+            "src": "/img/galeria/Cicom-33.jpg",
+            "alt": "Decoración de mesa institucional con placa"
+        },
+        {
+            "src": "/img/galeria/Cicom-34.jpg",
+            "alt": "Foto grupal formal en evento aniversario"
+        }
+    ],
+    "inicio": [
+        {
+            "src": "/img/inicio/Cicom-2.jpg",
+            "alt": "Grupo pequeño en exterior institucional"
+        },
+        {
+            "src": "/img/inicio/Cicom-5.jpg",
+            "alt": "Miembros posando en acceso a evento"
+        },
+        {
+            "src": "/img/inicio/Cicom-17.jpg",
+            "alt": "Directivos posando en evento formal"
+        },
+        {
+            "src": "/img/inicio/Cicom-26.jpg",
+            "alt": "Foto grupal institucional"
+        },
+        {
+            "src": "/img/inicio/Cicom-31.jpg",
+            "alt": "Participación institucional con escenografía LED"
+        }
+    ],
+    "contacto": [
+        {
+            "src": "/img/contacto/Cicom-0.jpg",
+            "alt": "Fachada del edificio institucional del colegio"
+        }
+    ]
+}
