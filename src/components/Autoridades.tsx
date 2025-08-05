@@ -3,41 +3,53 @@ import { motion } from "framer-motion";
 
 const autoridades = [
   {
-    nombre: "Ing. Gaby López",
+    nombre: "Ing. Gaby López Moreno De Lino",
     cargo: "Presidente",
     descripcion: "Líder del colegio profesional con amplia experiencia en el sector comercial y de marketing.",
-    imagen: "/img/presidente.png"
+    imagen: "/img/directorio/5.jpg"
   },
   {
-    nombre: "Ing. Carlos Rodríguez",
+    nombre: "Ing. Christian Suarez Díaz",
     cargo: "Vicepresidente",
     descripcion: "Responsable de las operaciones administrativas y desarrollo institucional.",
-    imagen: "/img/quienes-somos/Cicom-10.jpg"
+    imagen: "/img/directorio/1.jpg"
   },
   {
-    nombre: "Lic. Ana Patricia López",
-    cargo: "Secretaria General",
+    nombre: "Ing. Willy Eguez Montoya",
+    cargo: "Director General y Actas",
     descripcion: "Encargada de la gestión documental y comunicación institucional.",
-    imagen: "/img/quienes-somos/Cicom-11.jpg"
+    imagen: "/img/directorio/7.jpg"
   },
   {
-    nombre: "Ing. Roberto Martínez",
-    cargo: "Tesorero",
+    nombre: "Ing. Ingrid Paola Becerra Gómez",
+    cargo: "DIrector Régimen Económico",
     descripcion: "Responsable de la gestión financiera y presupuestaria del colegio.",
-    imagen: "/img/quienes-somos/Cicom-23.jpg"
+    imagen: "/img/directorio/0.jpg"
   },
   {
-    nombre: "Lic. Sandra Fernández",
-    cargo: "Secretaria de Actas",
+    nombre: "Ing. Maria Angelica Ibañez Candia",
+    cargo: "1er. Director",
     descripcion: "Encargada del registro y seguimiento de las actividades del directorio.",
-    imagen: "/img/quienes-somos/Cicom-32.jpg"
+    imagen: "/img/directorio/3.jpg"
   },
   {
-    nombre: "Ing. Luis Alberto Vargas",
-    cargo: "Vocal",
+    nombre: "Ing. Jorge Méndez Aurich",
+    cargo: "2do. Director",
     descripcion: "Miembro del directorio con enfoque en desarrollo profesional y capacitación.",
-    imagen: "/img/galeria/Cicom-4.jpg"
-  }
+    imagen: "/img/directorio/2.jpg"
+  },
+  {
+    nombre: "Ing. Diego Rivadeneira Sereviche",
+    cargo: "Director Suplente 1",
+    descripcion: "Miembro del directorio con enfoque en desarrollo profesional y capacitación.",
+    imagen: "/img/directorio/6.jpg"
+  },
+  {
+    nombre: "Ing. Jean Paul Guzman Castro",
+    cargo: "Director Suplente 1",
+    descripcion: "Miembro del directorio con enfoque en desarrollo profesional y capacitación.",
+    imagen: "/img/directorio/4.jpg"
+  },
 ];
 
 const Autoridades: React.FC = () => (
