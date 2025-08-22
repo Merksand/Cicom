@@ -68,7 +68,7 @@ const App: React.FC = () => {
       <nav className="fixed top-0 left-0 w-full bg-white/80 dark:bg-[#1e293b]/90 shadow z-50 backdrop-blur border-b border-[#f3f4f6] dark:border-[#1e293b]">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
           <span className="font-bold text-[#1e40af] dark:text-[#60a5fa] text-lg tracking-wide">
-            <img src="/img/logo-cicom.png" className="w-30 mr-2" alt=""/>
+            <img src="/img/logo1.png" className="md:w-33 w-25 mr-2 " alt=""/>
           </span>
           {/* Menú hamburguesa en móvil */}
           <button
