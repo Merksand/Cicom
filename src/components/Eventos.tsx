@@ -107,7 +107,7 @@ const Eventos: React.FC = () => {
       transition={{ duration: 0.7, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <video src="https://res.cloudinary.com/dwdoodwk1/video/upload/v1758053930/cicom-video_fz9d9p.mp4" controls />
+      <video className="max-h-screen object-cover rounded mb-4" src="https://res.cloudinary.com/dwdoodwk1/video/upload/v1758053930/cicom-video_fz9d9p.mp4" controls />
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
