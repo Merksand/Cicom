@@ -57,8 +57,8 @@ const Contacto: React.FC = () => (
             Email: cicomsc@cibscz.com
           </p>
           <p className="text-[#1e293b] dark:text-[#f3f4f6]">
-            Numero de telefono fijo sib: +591 3 3526911
-            Numero de telefono celular: +591 71640350
+            Número de teléfono fijo sib: +591 3 3526911
+            Número de teléfono celular: +591 71640350
             Whatsapp: +591 71640350
           </p>
           <p className="text-[#1e293b] dark:text-[#f3f4f6]">
