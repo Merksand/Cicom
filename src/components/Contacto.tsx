@@ -54,10 +54,12 @@ const Contacto: React.FC = () => (
             Datos de contacto
           </h3>
           <p className="text-[#1e293b] dark:text-[#f3f4f6]">
-            Email: contacto@cicscz.org.bo
+            Email: cicomsc@cibscz.com
           </p>
           <p className="text-[#1e293b] dark:text-[#f3f4f6]">
-            Teléfono: +591 3 3420222
+            Numero de telefono fijo sib: +591 3 3526911
+            Numero de telefono celular: +591 71640350
+            Whatsapp: +591 71640350
           </p>
           <p className="text-[#1e293b] dark:text-[#f3f4f6]">
             Facebook:{" "}
@@ -70,8 +72,13 @@ const Contacto: React.FC = () => (
               SCZCICOM
             </a>
           </p>
+          <p className="text-[#1e293b] dark:text-[#f3f4f6]">Tik tok: {" "}
+            <a href="https://www.tiktok.com/@cicom.col.ing.com" target="_blank" rel="noopener noreferrer" className="text-[#1e40af] dark:text-[#60a5fa] hover:underline">
+              @cicom.col.ing.com
+            </a>
+          </p>
           <p className="text-[#1e293b] dark:text-[#f3f4f6]">
-            Dirección: Av. Beni esquina 2do anillo, Santa Cruz
+            Dirección: Barrio urbari calle mocapine 402
           </p>
         </div>
         <div className="h-56 w-full rounded-lg overflow-hidden shadow">

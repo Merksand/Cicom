@@ -176,6 +176,7 @@ const App: React.FC = () => {
       {/* Espacio para el menú fijo */}
       <div className="h-16" />
       {/* Secciones */}
+      
       <main>
         <Inicio />
         <QuienesSomos />
